@@ -12,7 +12,7 @@ export default class ${fileName[0].toUpperCase()}${fileName.slice(1, fileName.le
 		this.state = { Component: DefaultComponent };
 	}
 	componentDidMount() {
-		System.import(path).then(file => this.setState({ Component: file.default }));
+		System.import("${path}").then(file => this.setState({ Component: file.default }));
 	}
 	render() {
 		const { Component } = this.state;
