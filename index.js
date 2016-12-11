@@ -5,8 +5,11 @@ module.exports = function createLazyBundleComponent(path) {
 	const pathSplit = path.split("/");
 	const fileName = pathSplit[pathSplit.length - 1].split(".js")[0];
 	const newFileName = `${fileName}-async.js`;
+	const asyncComponentName = fileName.split("-").map(word => (
+		`${word[0].toUpperCase()}${word.slice(1, word.length)}`
+	)).join("");
 	const component = `const DefaultComponent = () => null;
-export default class ${fileName[0].toUpperCase()}${fileName.slice(1, fileName.length)}Async extends React.Component {
+export default class ${asyncComponentName}Async extends React.Component {
 	constructor() {
 		super();
 		this.state = { Component: DefaultComponent };
