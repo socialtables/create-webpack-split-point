@@ -10,9 +10,9 @@ module.exports = function createLazyBundleComponent(path) {
 	)).join("");
 	const component = `const DefaultComponent = () => null;
 export default class ${asyncComponentName}Async extends React.Component {
-	constructor() {
-		super();
-		this.state = { Component: DefaultComponent };
+	constructor(props) {
+		super(props);
+		this.state = { Component: props.Loader || DefaultComponent };
 	}
 	componentDidMount() {
 		System.import("./${fileName}.js").then(file => this.setState({ Component: file.default }));
