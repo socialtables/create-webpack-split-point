@@ -15,7 +15,7 @@ export default class ${asyncComponentName}Async extends React.Component {
 		this.state = { Component: props.Loader || DefaultComponent };
 	}
 	componentDidMount() {
-		System.import("./${fileName}.js").then(file => this.setState({ Component: file.default }));
+		import("./${fileName}.js").then(file => this.setState({ Component: file.default }));
 	}
 	render() {
 		const { Component } = this.state;
