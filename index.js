@@ -9,7 +9,7 @@ module.exports = function createLazyBundleComponent(path) {
 		`${word[0].toUpperCase()}${word.slice(1, word.length)}`
 	)).join("");
 	const component = `const DefaultComponent = () => null;
-	let cachedComponent = null;
+let cachedComponent = null;
 export default class ${asyncComponentName}Async extends React.Component {
 	constructor(props) {
 		super(props);
