@@ -1,7 +1,7 @@
 "use strict";
 const fs = require("fs");
 
-module.exports = function createLazyBundleComponent(path) {
+module.exports = function createLazyBundleComponent(path, cb) {
 	const pathSplit = path.split("/");
 	const fileName = pathSplit[pathSplit.length - 1].split(".js")[0];
 	const newFileName = `${fileName}-async.js`;
@@ -34,20 +34,19 @@ export default class ${asyncComponentName}Async extends React.Component {
 		return <Component {...this.props} />;
 	}
 }
-`;	
+`;
 	const index = `export { default } from "./${newFileName}";`;
 	fs.writeFile(pathSplit.slice(0, pathSplit.length - 1).concat(newFileName).join("/"), component, err => {
 		if (err) {
-			console.error(err);
-			process.exit(1);
+			cb(err);
+			return;
 		}
 		fs.writeFile(pathSplit.slice(0, pathSplit.length - 1).concat("index.js").join("/"), index, err => {
 			if (err) {
-				console.error(err);
-				process.exit(1);
+				cb(err);
+				return;
 			}
-			console.log("Succesfully created async component files");
-			process.exit(0);
+			cb(null);
 		});
 	});
 }
