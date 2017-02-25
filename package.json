@@ -1,6 +1,6 @@
 {
   "name": "@socialtables/create-lazy-bundle-component",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "helper module to create files needed to make a react component a code split point",
   "main": "index.js",
   "bin": {
