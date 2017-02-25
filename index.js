@@ -1,7 +1,7 @@
 "use strict";
 const fs = require("fs");
 
-module.exports = function createLazyBundleComponent(path, cb) {
+module.exports = function createLazyBundleComponent(path, cb = () => {}) {
 	const pathSplit = path.split("/");
 	const fileName = pathSplit[pathSplit.length - 1].split(".js")[0];
 	const newFileName = `${fileName}-async.js`;
