@@ -1,12 +1,12 @@
 {
-  "name": "@socialtables/create-lazy-bundle-component",
+  "name": "create-webpack-split-point",
   "version": "2.2.1",
   "description": "helper module to create files needed to make a react component a code split point",
   "main": "index.js",
   "bin": {
-    "create-lazy-bundle-component": "bin/create-lazy-bundle-component.js"
+    "create-webpack-split-point": "bin/create-webpack-split-point.js"
   },
   "preferGlobal": true,
   "author": "Social Tables",
-  "license": "ISC"
+  "license": "Apache-2.0"
 }
