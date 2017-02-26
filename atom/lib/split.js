@@ -1,6 +1,6 @@
 "use babel";
 import { CompositeDisposable } from "atom";
-import createLazyBundleComponent from "@socialtables/create-lazy-bundle-component";
+import createWebpackSplitPoint from "@socialtables/create-webpack-split-point";
 
 export default {
   subscriptions: null,
@@ -25,7 +25,7 @@ export default {
       activePane.buffer.file.path
     );
     if (filePath) {
-      createLazyBundleComponent(filePath);
+      createWebpackSplitPoint(filePath);
     }
   }
 };
