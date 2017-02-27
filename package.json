@@ -1,6 +1,6 @@
 {
   "name": "create-webpack-split-point",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "helper module to create files needed to make a react component a code split point",
   "main": "index.js",
   "bin": {
