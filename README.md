@@ -1,6 +1,6 @@
 # create-webpack-split-point
 
-Webpack 2 exposes System.import a async module loader that will automatically define a split point and create a new bundle in your code that will only be loaded if the system.import is executed. React components that are not part of initial paint are a taylor made use case for this. This module aims to abstract a way the work of creating one of these components.
+Webpack 2 exposes import() a async module loader that will automatically define a split point and create a new bundle in your code that will only be loaded if the system.import is executed. React components that are not part of initial paint are a taylor made use case for this. This module aims to abstract a way the work of creating one of these components.
 
 ## use
 
@@ -18,7 +18,7 @@ Then in the place you want to use the async header component you could simply im
 import Header from "./components/header";
 ```
 
-As soon as componentDidMount in Header is fired `import` will be called and it will asynchronously load the bundle containing the Header component and render it on the page, before that a Component returning null will be rendered.
+As soon as componentDidMount in Header is fired `impor()` will be called and it will asynchronously load the bundle containing the Header component and render it on the page, before that a Component returning null will be rendered.
 
 - - -
 
